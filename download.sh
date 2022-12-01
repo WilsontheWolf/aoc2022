@@ -38,13 +38,12 @@ if [[ -f "inputs/$DAY.txt" ]] then
     echo "Input file already exists. Skipping."
 else
     echo "Downloading input..."
-    # NOTE: This is broken
     INPUT=$(curl -s -H "Cookie: session=$_TOKEN" --fail-with-body https://adventofcode.com/$YEAR/day/$DAY/input)
     if [[ $? -ne 0 ]] then
         echo "Failed to download input!"
         echo $INPUT
         exit 1
     fi
-    echo $INPUT > inputs/$DAY.txt
+    echo "$INPUT" > inputs/$DAY.txt
     echo "Input successfully downloaded to ./inputs/$DAY.txt"
 fi
