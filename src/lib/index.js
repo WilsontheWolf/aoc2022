@@ -1,9 +1,10 @@
 const fs = require('node:fs');
 
-const getInput = (day) => {
+const getInput = (day, trim = true) => {
     let input;
     try {
-        input = fs.readFileSync(`./inputs/${day}.txt`, 'utf-8')?.trim();
+        input = fs.readFileSync(`./inputs/${day}.txt`, 'utf-8');
+        if(trim) input?.trim();
     } catch (e) {
         console.log(e);
         console.log(`Make sure you downloaded the input for day ${day}!`);
