@@ -13,7 +13,7 @@ data.split('\n').slice(0, -1).forEach(line => {
         const char = line[i];
         if (char !== ' ') push(char, (i - 1) / 4)
     }
-})
+});
 
 inst.split('\n').forEach((v) => {
     const [, loop, from, to] = v.match(regex)?.map(v => parseInt(v)) || [];
