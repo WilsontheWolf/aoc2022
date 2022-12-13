@@ -4,7 +4,7 @@ const getInput = (day, trim = true) => {
     let input;
     try {
         input = fs.readFileSync(`./inputs/${day}.txt`, 'utf-8');
-        if(trim) input?.trim();
+        if (trim) input = input?.trim();
     } catch (e) {
         console.log(e);
         console.log(`Make sure you downloaded the input for day ${day}!`);
